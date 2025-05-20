@@ -22,5 +22,7 @@
     echo date('D - M / Y');
 
     ?>
+    <br>
+    <a href="pertama">Pertemuan 1</a></br>
 </body>
 </html>

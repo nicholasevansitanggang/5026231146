@@ -1,0 +1,38 @@
+#navlist{
+  position: relative;
+}
+#navlist li{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: absolute;
+  top: 0;
+}
+#navlist, #navlist a{
+  height: 100px;
+  display: block;
+}
+#next{
+  left: 0px;
+  width: 100px;
+  background: url('combined.png')0 0;
+}
+#prev{
+  left: 100px;
+  width: 100px;
+  background: url('combined.png')-100px 0;
+}
+#home{
+  left: 200px;
+  width: 100px;
+  background: url('combined.png')-200px 0;
+}
+#next a:hover{
+  background: url('combined.png')-10px 100px;
+}
+#prev a:hover{
+  background: url('combined.png')-90px 100px;
+}
+#home a:hover{
+  background: url('combined.png')90px 100px;
+}
