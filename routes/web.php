@@ -4,6 +4,7 @@
     use Illuminate\Support\Facades\Route;
     use App\Http\Controllers\Coba;
     use App\Http\Controllers\PegawaiDBController;
+    use App\Http\Controllers\RAMController;
 
     /*
     |--------------------------------------------------------------------------
@@ -101,6 +102,14 @@
     Route::post('/pegawai/update',[PegawaiDBController::class,'update']);
     Route::get('/pegawai/hapus/{id}',[PegawaiDBController::class,'hapus']);
     Route::get('/pegawai/cari',[PegawaiDBController::class,'cari']);
+
+    Route::get('/ram',[RAMController::class,'ram']);
+    Route::get('/ram/tambah',[RAMController::class,'tambah']);
+    Route::post('/ram/store',[RAMController::class,'store']);
+    Route::get('/ram/edit/{id}',[RAMController::class,'edit']);
+    Route::post('/ram/update',[RAMController::class,'update']);
+    Route::get('/ram/hapus/{id}',[RAMController::class,'hapus']);
+    Route::get('/ram/cari',[RAMController::class,'cari']);
 
 
 
