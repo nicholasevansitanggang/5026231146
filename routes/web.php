@@ -5,6 +5,7 @@
     use App\Http\Controllers\Coba;
     use App\Http\Controllers\PegawaiDBController;
     use App\Http\Controllers\RAMController;
+    use App\Http\Controllers\KaryawanController;
 
     /*
     |--------------------------------------------------------------------------
@@ -110,6 +111,11 @@
     Route::post('/ram/update',[RAMController::class,'update']);
     Route::get('/ram/hapus/{id}',[RAMController::class,'hapus']);
     Route::get('/ram/cari',[RAMController::class,'cari']);
+
+    Route::get('/karyawan',[KaryawanController::class,'indexkaryawan']);
+    Route::get('/karyawan/tambah',[KaryawanController::class,'tambah']);
+    Route::post('/karyawan/store',[KaryawanController::class,'store']);
+    Route::get('/karyawan/hapus/{id}',[KaryawanController::class,'hapus']);
 
 
 
