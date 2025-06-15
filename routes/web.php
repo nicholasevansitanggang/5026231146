@@ -6,6 +6,8 @@
     use App\Http\Controllers\PegawaiDBController;
     use App\Http\Controllers\RAMController;
     use App\Http\Controllers\KaryawanController;
+    use App\Http\Controllers\CounterController;
+    use App\Http\Controllers\KeranjangController;
 
     /*
     |--------------------------------------------------------------------------
@@ -117,7 +119,13 @@
     Route::post('/karyawan/store',[KaryawanController::class,'store']);
     Route::get('/karyawan/hapus/{id}',[KaryawanController::class,'hapus']);
 
+    Route::get('/counter', [CounterController::class, 'index']);
 
+    Route::get('/keranjang', [KeranjangController::class, 'indexkeranjang']);
+    Route::get('/keranjang/tambah', [KeranjangController::class, 'tambahkeranjang']);
+    Route::get('/keranjang/tambah/{ID}', [KeranjangController::class, 'storekeranjang']);
+    Route::post('/keranjang/update', [KeranjangController::class, 'updatekeranjang']);
+    Route::get('/keranjang/hapus/{ID}', [KeranjangController::class, 'keranjangbelanja']);
 
     // / -> publised url
     // isi function yang kedua adalah viewnya ada direct html(super simple), view blade(simple flow), dan controller(complex) untuk aksesnya

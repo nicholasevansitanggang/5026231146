@@ -9,7 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40NZMDwmpzmO0qp+oHk5qLgXyVlYnJ+f/w0pB5/4B25ZtF5oTz9z/04b/jLq9g7+M+J8+2g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <style>
         body {
             background-color: #e9f5ff;
@@ -38,11 +38,32 @@
         .navbar-nav .nav-item .nav-link {
             color: rgba(255, 255, 255, 0.75);
             padding: 0.8rem 1rem;
-            transition: color 0.3s ease;
+            transition: color 0.3s ease, transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
+        .navbar-nav .nav-item .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #ffffff;
+            transform: scaleX(0);
+            transition: transform 0.3s ease-out;
+            transform-origin: bottom right;
+        }
+        .navbar-nav .nav-item .nav-link:hover::before,
+        .navbar-nav .nav-item .nav-link.active::before {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
         .navbar-nav .nav-item .nav-link:hover,
         .navbar-nav .nav-item .nav-link.active {
             color: #ffffff;
+            transform: translateY(-2px); /* Slight lift on hover */
         }
         .navbar-nav .nav-item {
             margin: 0 5px;
@@ -89,25 +110,25 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="/frontend">All Front End</a>
+                    <a class="nav-link" href="/frontend"><i class="fas fa-desktop mr-1"></i>All Front End</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/pegawai">Pegawai</a>
+                    <a class="nav-link" href="/pegawai"><i class="fas fa-users mr-1"></i>Pegawai</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/ram">Tugas CRUD</a>
+                    <a class="nav-link" href="/ram"><i class="fas fa-user-tie mr-1"></i>Tugas CRUD</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">EAS</a>
+                    <a class="nav-link" href="#"><i class="fas fa-graduation-cap mr-1"></i>EAS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/karyawan">Latihan 1</a>
+                    <a class="nav-link" href="/karyawan"><i class="fas fa-file-alt mr-1"></i>Latihan 1</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Latihan 2</a>
+                    <a class="nav-link" href="/counter"><i class="fas fa-file-alt mr-1"></i>Latihan 2</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Latihan 3</a>
+                    <a class="nav-link" href="/keranjang"><i class="fas fa-file-alt mr-1"></i>Latihan 3</a>
                 </li>
             </ul>
         </div>
